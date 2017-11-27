@@ -1,5 +1,8 @@
 package cp.benchmark.intset;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * @author Pascal Felber
  * @author Tiago Vale
@@ -8,12 +11,14 @@ package cp.benchmark.intset;
 public class IntSetLinkedListOptimisticPerNodeLock implements IntSet {
 
   public class Node {
+	private final Lock lock;
     private final int m_value;
     private Node m_next;
 
     public Node(int value, Node next) {
       m_value = value;
       m_next = next;
+      lock = new ReentrantLock();
     }
 
     public Node(int value) {
@@ -31,6 +36,14 @@ public class IntSetLinkedListOptimisticPerNodeLock implements IntSet {
     public Node getNext() {
       return m_next;
     }
+    
+    public void lock() {
+    	lock.lock();
+    }
+    
+    public void unlock() {
+    	lock.unlock();
+    }
   }
 
   private final Node m_first;
@@ -43,56 +56,90 @@ public class IntSetLinkedListOptimisticPerNodeLock implements IntSet {
   }
 
   public boolean add(int value) {
-    boolean result;
-
-    Node previous = m_first;
-    Node next = previous.getNext();
-    int v;
-    while ((v = next.getValue()) < value) {
-      previous = next;
-      next = previous.getNext();
+    while(true) {
+    	Node previous = m_first;
+    	Node next = previous.getNext();
+    	while(next.getValue() <= value) {
+    		previous = next;
+    		next = previous.getNext();
+    	}
+    	previous.lock();
+    	next.lock();
+    	try {
+    		if(auxValidate(previous, next)) {
+    			if(next.getValue()==value) {
+    				return false;
+    			} else {
+    				previous.setNext(new Node(value, next));
+    				return true;
+    			}
+    		}
+    	} finally {
+    		previous.unlock();
+    		next.unlock();
+    	}
     }
-    result = v != value;
-    if (result) {
-      previous.setNext(new Node(value, next));
-    }
-
-    return result;
   }
 
   public boolean remove(int value) {
-    boolean result;
-
-    Node previous = m_first;
-    Node next = previous.getNext();
-    int v;
-    while ((v = next.getValue()) < value) {
-      previous = next;
-      next = previous.getNext();
-    }
-    result = v == value;
-    if (result) {
-      previous.setNext(next.getNext());
-    }
-
-    return result;
+	  
+	  while(true) {
+	    	Node previous = m_first;
+	    	Node next = previous.getNext();
+	    	while(next.getValue() < value) {
+	    		previous = next;
+	    		next = previous.getNext();
+	    	}
+	    	previous.lock();
+	    	next.lock();
+	    	try {
+	    		if(auxValidate(previous, next)) {
+	    			if(next.getValue()==value) {
+	    				previous.setNext(next.getNext());
+	    				return true;
+	    			} else {
+	    				return false;
+	    			}
+	    		}
+	    	} finally {
+	    		previous.unlock();
+	    		next.unlock();
+	    	}
+	    }
   }
 
   public boolean contains(int value) {
-    boolean result;
-
-    Node previous = m_first;
-    Node next = previous.getNext();
-    int v;
-    while ((v = next.getValue()) < value) {
-      previous = next;
-      next = previous.getNext();
-    }
-    result = (v == value);
-
-    return result;
+	  while(true) {
+	    	Node previous = m_first;
+	    	Node next = previous.getNext();
+	    	while(next.getValue() < value) {
+	    		previous = next;
+	    		next = previous.getNext();
+	    	}
+	    	previous.lock();
+	    	next.lock();
+	    	try {
+	    		
+	    		if(auxValidate(previous, next))
+	    			return (next.getValue()==value);
+	    	} finally {
+	    		previous.unlock();
+	    		next.unlock();
+	    	}
+	    }
   }
 
+  //funciona numa lista ordenada
+  public boolean auxValidate(Node prev, Node next) {
+	  Node node = m_first;
+	  while(node.getValue() <= prev.getValue()) {
+		  if(node==prev) 
+			  return prev.getNext().equals(next);
+		  node = node.getNext();
+	  }
+	  return false;
+  }
+  
   public void validate() {
     java.util.Set<Integer> checker = new java.util.HashSet<>();
     int previous_value = m_first.getValue();

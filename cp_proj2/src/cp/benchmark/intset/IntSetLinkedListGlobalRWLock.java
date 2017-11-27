@@ -1,5 +1,8 @@
 package cp.benchmark.intset;
 
+import java.util.concurrent.locks.*;
+
+
 /**
  * @author Pascal Felber
  * @author Tiago Vale
@@ -34,17 +37,20 @@ public class IntSetLinkedListGlobalRWLock implements IntSet {
   }
 
   private final Node m_first;
-
+  private final ReadWriteLock lock;
+  
   public IntSetLinkedListGlobalRWLock() {
     Node min = new Node(Integer.MIN_VALUE);
     Node max = new Node(Integer.MAX_VALUE);
     min.setNext(max);
     m_first = min;
+    lock = new ReentrantReadWriteLock();
   }
 
   public boolean add(int value) {
     boolean result;
-
+    lock.writeLock().lock();
+    try {
     Node previous = m_first;
     Node next = previous.getNext();
     int v;
@@ -56,13 +62,16 @@ public class IntSetLinkedListGlobalRWLock implements IntSet {
     if (result) {
       previous.setNext(new Node(value, next));
     }
-
+    } finally {
+    	lock.writeLock().unlock();
+    }
     return result;
   }
 
   public boolean remove(int value) {
     boolean result;
-
+    lock.writeLock().lock();
+    try {
     Node previous = m_first;
     Node next = previous.getNext();
     int v;
@@ -74,13 +83,16 @@ public class IntSetLinkedListGlobalRWLock implements IntSet {
     if (result) {
       previous.setNext(next.getNext());
     }
-
+  	} finally {
+  		lock.writeLock().unlock();
+  	}
     return result;
   }
 
   public boolean contains(int value) {
     boolean result;
-
+    lock.readLock().lock();
+    try {
     Node previous = m_first;
     Node next = previous.getNext();
     int v;
@@ -89,7 +101,9 @@ public class IntSetLinkedListGlobalRWLock implements IntSet {
       next = previous.getNext();
     }
     result = (v == value);
-
+  	} finally {
+  		lock.readLock().unlock();
+  	}
     return result;
   }
 

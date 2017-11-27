@@ -35,6 +35,13 @@ public class IntSetLinkedListSynchronized implements IntSet {
 
   private final Node m_first;
 
+  /** statements
+  synchronized(this) 
+  {
+	  
+  }
+  */
+  
   public IntSetLinkedListSynchronized() {
     Node min = new Node(Integer.MIN_VALUE);
     Node max = new Node(Integer.MAX_VALUE);
@@ -42,7 +49,7 @@ public class IntSetLinkedListSynchronized implements IntSet {
     m_first = min;
   }
 
-  public boolean add(int value) {
+  public synchronized boolean add(int value) {
     boolean result;
 
     Node previous = m_first;
@@ -60,7 +67,7 @@ public class IntSetLinkedListSynchronized implements IntSet {
     return result;
   }
 
-  public boolean remove(int value) {
+  public synchronized boolean remove(int value) {
     boolean result;
 
     Node previous = m_first;
@@ -78,7 +85,7 @@ public class IntSetLinkedListSynchronized implements IntSet {
     return result;
   }
 
-  public boolean contains(int value) {
+  public synchronized boolean contains(int value) {
     boolean result;
 
     Node previous = m_first;
@@ -93,7 +100,7 @@ public class IntSetLinkedListSynchronized implements IntSet {
     return result;
   }
 
-  public void validate() {
+  public synchronized void validate() {
     java.util.Set<Integer> checker = new java.util.HashSet<>();
     int previous_value = m_first.getValue();
     Node node = m_first.getNext();

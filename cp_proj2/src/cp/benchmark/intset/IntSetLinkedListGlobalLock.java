@@ -5,6 +5,8 @@ package cp.benchmark.intset;
  * @author Tiago Vale
  * @since 0.1
  */
+
+import java.util.concurrent.locks.*;
 public class IntSetLinkedListGlobalLock implements IntSet {
 
   public class Node {
@@ -34,17 +36,22 @@ public class IntSetLinkedListGlobalLock implements IntSet {
   }
 
   private final Node m_first;
+  private final Lock lock;
 
+  
   public IntSetLinkedListGlobalLock() {
     Node min = new Node(Integer.MIN_VALUE);
     Node max = new Node(Integer.MAX_VALUE);
     min.setNext(max);
     m_first = min;
+    lock = new ReentrantLock();
+    
   }
 
   public boolean add(int value) {
     boolean result;
-
+    lock.lock();
+    try {
     Node previous = m_first;
     Node next = previous.getNext();
     int v;
@@ -56,13 +63,16 @@ public class IntSetLinkedListGlobalLock implements IntSet {
     if (result) {
       previous.setNext(new Node(value, next));
     }
-
+    } finally {
+    	lock.unlock();
+    }
     return result;
   }
 
   public boolean remove(int value) {
     boolean result;
-
+    lock.lock();
+    try {
     Node previous = m_first;
     Node next = previous.getNext();
     int v;
@@ -74,13 +84,16 @@ public class IntSetLinkedListGlobalLock implements IntSet {
     if (result) {
       previous.setNext(next.getNext());
     }
-
+    } finally {
+    	lock.unlock();
+    }
     return result;
   }
 
   public boolean contains(int value) {
     boolean result;
-
+    lock.lock();
+    try {
     Node previous = m_first;
     Node next = previous.getNext();
     int v;
@@ -89,7 +102,9 @@ public class IntSetLinkedListGlobalLock implements IntSet {
       next = previous.getNext();
     }
     result = (v == value);
-
+  	} finally {
+  		lock.unlock();
+  	}
     return result;
   }
 
