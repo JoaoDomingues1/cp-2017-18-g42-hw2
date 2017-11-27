@@ -1,8 +1,8 @@
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 0
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 0
 Initial size        = 256
 Range               = 262144
 Write rate          = 0%
-List implementation = IntSetLinkedListSynchronized
+List implementation = IntSetLinkedListGlobalLock
 
 Starting threads... 0 1
 End of warmup phase... 0 1
@@ -14,17 +14,17 @@ Validated successfully
 RESULTS:
 
   Warmup duration (ms) = 2000
-  Test duration (ms)   = 10000
-  Throughput (ops/s)   = 1586
-  Nb iterations        = 15862022
-  Stats                = A=0, R=0, C=15862022
-    0 : 6759563 (A=0, R=0, C=6759563)
-    1 : 9102459 (A=0, R=0, C=9102459)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 0
+  Test duration (ms)   = 10002
+  Throughput (ops/s)   = 1118
+  Nb iterations        = 11185108
+  Stats                = A=0, R=0, C=11185108
+    0 : 5008814 (A=0, R=0, C=5008814)
+    1 : 6176294 (A=0, R=0, C=6176294)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 0
 Initial size        = 256
 Range               = 262144
 Write rate          = 0%
-List implementation = IntSetLinkedListSynchronized
+List implementation = IntSetLinkedListGlobalLock
 
 Starting threads... 0 1 2 3 4
 End of warmup phase... 0 1 2 3 4
@@ -36,20 +36,20 @@ Validated successfully
 RESULTS:
 
   Warmup duration (ms) = 2000
-  Test duration (ms)   = 10003
-  Throughput (ops/s)   = 1253
-  Nb iterations        = 12536514
-  Stats                = A=0, R=0, C=12536514
-    0 : 2690236 (A=0, R=0, C=2690236)
-    1 : 2690363 (A=0, R=0, C=2690363)
-    2 : 2393762 (A=0, R=0, C=2393762)
-    3 : 2197326 (A=0, R=0, C=2197326)
-    4 : 2564827 (A=0, R=0, C=2564827)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 0
+  Test duration (ms)   = 10007
+  Throughput (ops/s)   = 1225
+  Nb iterations        = 12264521
+  Stats                = A=0, R=0, C=12264521
+    0 : 2265701 (A=0, R=0, C=2265701)
+    1 : 2461203 (A=0, R=0, C=2461203)
+    2 : 2543118 (A=0, R=0, C=2543118)
+    3 : 2403536 (A=0, R=0, C=2403536)
+    4 : 2590963 (A=0, R=0, C=2590963)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 0
 Initial size        = 256
 Range               = 262144
 Write rate          = 0%
-List implementation = IntSetLinkedListSynchronized
+List implementation = IntSetLinkedListGlobalLock
 
 Starting threads... 0 1 2 3 4 5 6 7 8 9
 End of warmup phase... 0 1 2 3 4 5 6 7 8 9
@@ -61,147 +61,147 @@ Validated successfully
 RESULTS:
 
   Warmup duration (ms) = 2000
-  Test duration (ms)   = 10004
-  Throughput (ops/s)   = 978
-  Nb iterations        = 9788268
-  Stats                = A=0, R=0, C=9788268
-    0 : 1073508 (A=0, R=0, C=1073508)
-    1 : 1079568 (A=0, R=0, C=1079568)
-    2 : 1103688 (A=0, R=0, C=1103688)
-    3 : 927020 (A=0, R=0, C=927020)
-    4 : 1093164 (A=0, R=0, C=1093164)
-    5 : 960537 (A=0, R=0, C=960537)
-    6 : 896271 (A=0, R=0, C=896271)
-    7 : 817791 (A=0, R=0, C=817791)
-    8 : 751897 (A=0, R=0, C=751897)
-    9 : 1084824 (A=0, R=0, C=1084824)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 0
-Initial size        = 256
-Range               = 262144
-Write rate          = 0%
-List implementation = IntSetLinkedListSynchronized
-
-Starting threads... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-End of warmup phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-End of test phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-Waiting for threads to finish...
-All threads returned successfully
-Validating...
-Validated successfully
-RESULTS:
-
-  Warmup duration (ms) = 2000
   Test duration (ms)   = 10000
-  Throughput (ops/s)   = 935
-  Nb iterations        = 9359123
-  Stats                = A=0, R=0, C=9359123
-    0 : 335887 (A=0, R=0, C=335887)
-    1 : 362250 (A=0, R=0, C=362250)
-    2 : 573713 (A=0, R=0, C=573713)
-    3 : 290100 (A=0, R=0, C=290100)
-    4 : 392709 (A=0, R=0, C=392709)
-    5 : 632743 (A=0, R=0, C=632743)
-    6 : 427524 (A=0, R=0, C=427524)
-    7 : 463240 (A=0, R=0, C=463240)
-    8 : 314371 (A=0, R=0, C=314371)
-    9 : 379617 (A=0, R=0, C=379617)
-    10 : 336719 (A=0, R=0, C=336719)
-    11 : 295225 (A=0, R=0, C=295225)
-    12 : 306592 (A=0, R=0, C=306592)
-    13 : 273318 (A=0, R=0, C=273318)
-    14 : 287739 (A=0, R=0, C=287739)
-    15 : 266710 (A=0, R=0, C=266710)
-    16 : 347547 (A=0, R=0, C=347547)
-    17 : 297805 (A=0, R=0, C=297805)
-    18 : 399445 (A=0, R=0, C=399445)
-    19 : 283303 (A=0, R=0, C=283303)
-    20 : 222708 (A=0, R=0, C=222708)
-    21 : 409225 (A=0, R=0, C=409225)
-    22 : 494298 (A=0, R=0, C=494298)
-    23 : 390231 (A=0, R=0, C=390231)
-    24 : 576104 (A=0, R=0, C=576104)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 25
-Initial size        = 256
-Range               = 262144
-Write rate          = 25%
-List implementation = IntSetLinkedListSynchronized
-
-Starting threads... 0 1
-End of warmup phase... 0 1
-End of test phase... 0 1
-Waiting for threads to finish...
-All threads returned successfully
-Validating...
-Validated successfully
-RESULTS:
-
-  Warmup duration (ms) = 2000
-  Test duration (ms)   = 10000
-  Throughput (ops/s)   = 1949
-  Nb iterations        = 19493938
-  Stats                = A=2437125, R=2434795, C=14622018
-    0 : 14878237 (A=1860216, R=1858442, C=11159579)
-    1 : 4615701 (A=576909, R=576353, C=3462439)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 25
-Initial size        = 256
-Range               = 262144
-Write rate          = 25%
-List implementation = IntSetLinkedListSynchronized
-
-Starting threads... 0 1 2 3 4
-End of warmup phase... 0 1 2 3 4
-End of test phase... 0 1 2 3 4
-Waiting for threads to finish...
-All threads returned successfully
-Validating...
-Validated successfully
-RESULTS:
-
-  Warmup duration (ms) = 2001
-  Test duration (ms)   = 10005
-  Throughput (ops/s)   = 1345
-  Nb iterations        = 13463610
-  Stats                = A=1683591, R=1681925, C=10098094
-    0 : 3051600 (A=380904, R=380508, C=2290188)
-    1 : 3220556 (A=402755, R=402356, C=2415445)
-    2 : 3248804 (A=406608, R=406236, C=2435960)
-    3 : 1283697 (A=160478, R=160315, C=962904)
-    4 : 2658953 (A=332846, R=332510, C=1993597)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 25
-Initial size        = 256
-Range               = 262144
-Write rate          = 25%
-List implementation = IntSetLinkedListSynchronized
-
-Starting threads... 0 1 2 3 4 5 6 7 8 9
-End of warmup phase... 0 1 2 3 4 5 6 7 8 9
-End of test phase... 0 1 2 3 4 5 6 7 8 9
-Waiting for threads to finish...
-All threads returned successfully
-Validating...
-Validated successfully
-RESULTS:
-
-  Warmup duration (ms) = 2000
-  Test duration (ms)   = 10005
   Throughput (ops/s)   = 1107
-  Nb iterations        = 11079336
-  Stats                = A=1383352, R=1381958, C=8314026
-    0 : 1808584 (A=225704, R=225478, C=1357402)
-    1 : 1231133 (A=153334, R=153182, C=924617)
-    2 : 1619788 (A=202299, R=202111, C=1215378)
-    3 : 780494 (A=97558, R=97476, C=585460)
-    4 : 1107172 (A=138101, R=137951, C=831120)
-    5 : 820443 (A=102870, R=102760, C=614813)
-    6 : 1011720 (A=126160, R=126021, C=759539)
-    7 : 767989 (A=95864, R=95756, C=576369)
-    8 : 1088305 (A=136151, R=136014, C=816140)
-    9 : 843708 (A=105311, R=105209, C=633188)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 25
+  Nb iterations        = 11077872
+  Stats                = A=0, R=0, C=11077872
+    0 : 1077937 (A=0, R=0, C=1077937)
+    1 : 1101253 (A=0, R=0, C=1101253)
+    2 : 1066753 (A=0, R=0, C=1066753)
+    3 : 1119472 (A=0, R=0, C=1119472)
+    4 : 1046731 (A=0, R=0, C=1046731)
+    5 : 1093663 (A=0, R=0, C=1093663)
+    6 : 1102587 (A=0, R=0, C=1102587)
+    7 : 1155269 (A=0, R=0, C=1155269)
+    8 : 1231382 (A=0, R=0, C=1231382)
+    9 : 1082825 (A=0, R=0, C=1082825)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 0
+Initial size        = 256
+Range               = 262144
+Write rate          = 0%
+List implementation = IntSetLinkedListGlobalLock
+
+Starting threads... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+End of warmup phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+End of test phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+Waiting for threads to finish...
+All threads returned successfully
+Validating...
+Validated successfully
+RESULTS:
+
+  Warmup duration (ms) = 2001
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 1342
+  Nb iterations        = 13422576
+  Stats                = A=0, R=0, C=13422576
+    0 : 515386 (A=0, R=0, C=515386)
+    1 : 452483 (A=0, R=0, C=452483)
+    2 : 570752 (A=0, R=0, C=570752)
+    3 : 679168 (A=0, R=0, C=679168)
+    4 : 623578 (A=0, R=0, C=623578)
+    5 : 475054 (A=0, R=0, C=475054)
+    6 : 498238 (A=0, R=0, C=498238)
+    7 : 617733 (A=0, R=0, C=617733)
+    8 : 573991 (A=0, R=0, C=573991)
+    9 : 469247 (A=0, R=0, C=469247)
+    10 : 654647 (A=0, R=0, C=654647)
+    11 : 498977 (A=0, R=0, C=498977)
+    12 : 458871 (A=0, R=0, C=458871)
+    13 : 601337 (A=0, R=0, C=601337)
+    14 : 527128 (A=0, R=0, C=527128)
+    15 : 600974 (A=0, R=0, C=600974)
+    16 : 518422 (A=0, R=0, C=518422)
+    17 : 547722 (A=0, R=0, C=547722)
+    18 : 477629 (A=0, R=0, C=477629)
+    19 : 474465 (A=0, R=0, C=474465)
+    20 : 465219 (A=0, R=0, C=465219)
+    21 : 533314 (A=0, R=0, C=533314)
+    22 : 451271 (A=0, R=0, C=451271)
+    23 : 487109 (A=0, R=0, C=487109)
+    24 : 649861 (A=0, R=0, C=649861)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 25
 Initial size        = 256
 Range               = 262144
 Write rate          = 25%
-List implementation = IntSetLinkedListSynchronized
+List implementation = IntSetLinkedListGlobalLock
+
+Starting threads... 0 1
+End of warmup phase... 0 1
+End of test phase... 0 1
+Waiting for threads to finish...
+All threads returned successfully
+Validating...
+Validated successfully
+RESULTS:
+
+  Warmup duration (ms) = 2000
+  Test duration (ms)   = 10003
+  Throughput (ops/s)   = 1305
+  Nb iterations        = 13054270
+  Stats                = A=1634156, R=1632540, C=9787574
+    0 : 6442415 (A=806061, R=805264, C=4831090)
+    1 : 6611855 (A=828095, R=827276, C=4956484)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 25
+Initial size        = 256
+Range               = 262144
+Write rate          = 25%
+List implementation = IntSetLinkedListGlobalLock
+
+Starting threads... 0 1 2 3 4
+End of warmup phase... 0 1 2 3 4
+End of test phase... 0 1 2 3 4
+Waiting for threads to finish...
+All threads returned successfully
+Validating...
+Validated successfully
+RESULTS:
+
+  Warmup duration (ms) = 2000
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 970
+  Nb iterations        = 9706875
+  Stats                = A=1214996, R=1213733, C=7278146
+    0 : 1948372 (A=243809, R=243560, C=1461003)
+    1 : 1882044 (A=235381, R=235152, C=1411511)
+    2 : 2062656 (A=258786, R=258516, C=1545354)
+    3 : 1943874 (A=243100, R=242829, C=1457945)
+    4 : 1869929 (A=233920, R=233676, C=1402333)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 25
+Initial size        = 256
+Range               = 262144
+Write rate          = 25%
+List implementation = IntSetLinkedListGlobalLock
+
+Starting threads... 0 1 2 3 4 5 6 7 8 9
+End of warmup phase... 0 1 2 3 4 5 6 7 8 9
+End of test phase... 0 1 2 3 4 5 6 7 8 9
+Waiting for threads to finish...
+All threads returned successfully
+Validating...
+Validated successfully
+RESULTS:
+
+  Warmup duration (ms) = 2000
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 758
+  Nb iterations        = 7585472
+  Stats                = A=948256, R=947288, C=5689928
+    0 : 787950 (A=98610, R=98513, C=590827)
+    1 : 667635 (A=83583, R=83478, C=500574)
+    2 : 767577 (A=96037, R=95949, C=575591)
+    3 : 708906 (A=88382, R=88292, C=532232)
+    4 : 713117 (A=89413, R=89329, C=534375)
+    5 : 805714 (A=100756, R=100651, C=604307)
+    6 : 819699 (A=102595, R=102501, C=614603)
+    7 : 726493 (A=90410, R=90315, C=545768)
+    8 : 761515 (A=95183, R=95085, C=571247)
+    9 : 826866 (A=103287, R=103175, C=620404)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 25
+Initial size        = 256
+Range               = 262144
+Write rate          = 25%
+List implementation = IntSetLinkedListGlobalLock
 
 Starting threads... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
 End of warmup phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
@@ -214,39 +214,39 @@ RESULTS:
 
   Warmup duration (ms) = 2000
   Test duration (ms)   = 10000
-  Throughput (ops/s)   = 817
-  Nb iterations        = 8176026
-  Stats                = A=1022752, R=1021743, C=6131531
-    0 : 1160881 (A=145072, R=144940, C=870869)
-    1 : 568262 (A=71120, R=71052, C=426090)
-    2 : 484039 (A=60505, R=60454, C=363080)
-    3 : 292296 (A=36502, R=36475, C=219319)
-    4 : 238823 (A=29781, R=29750, C=179292)
-    5 : 251496 (A=31578, R=31544, C=188374)
-    6 : 244440 (A=30625, R=30600, C=183215)
-    7 : 222393 (A=27834, R=27807, C=166752)
-    8 : 284003 (A=35382, R=35342, C=213279)
-    9 : 260595 (A=32598, R=32562, C=195435)
-    10 : 307286 (A=38508, R=38474, C=230304)
-    11 : 177221 (A=22106, R=22085, C=133030)
-    12 : 199881 (A=25145, R=25121, C=149615)
-    13 : 270673 (A=33775, R=33749, C=203149)
-    14 : 268996 (A=33755, R=33727, C=201514)
-    15 : 278840 (A=35193, R=35158, C=208489)
-    16 : 335822 (A=42052, R=41999, C=251771)
-    17 : 289418 (A=36203, R=36167, C=217048)
-    18 : 265643 (A=33168, R=33132, C=199343)
-    19 : 263157 (A=32827, R=32792, C=197538)
-    20 : 276660 (A=34557, R=34518, C=207585)
-    21 : 260878 (A=32486, R=32448, C=195944)
-    22 : 335929 (A=41848, R=41806, C=252275)
-    23 : 278459 (A=34839, R=34799, C=208821)
-    24 : 359935 (A=45293, R=45242, C=269400)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 50
+  Throughput (ops/s)   = 709
+  Nb iterations        = 7093082
+  Stats                = A=888315, R=887463, C=5317304
+    0 : 326358 (A=40771, R=40734, C=244853)
+    1 : 280394 (A=35086, R=35055, C=210253)
+    2 : 358709 (A=44929, R=44887, C=268893)
+    3 : 235188 (A=29441, R=29409, C=176338)
+    4 : 299436 (A=37605, R=37573, C=224258)
+    5 : 240737 (A=30150, R=30116, C=180471)
+    6 : 280671 (A=35169, R=35129, C=210373)
+    7 : 316952 (A=39804, R=39754, C=237394)
+    8 : 334583 (A=41934, R=41904, C=250745)
+    9 : 280128 (A=35005, R=34968, C=210155)
+    10 : 258268 (A=32127, R=32097, C=194044)
+    11 : 267964 (A=33644, R=33607, C=200713)
+    12 : 295391 (A=37070, R=37032, C=221289)
+    13 : 255734 (A=32136, R=32103, C=191495)
+    14 : 269604 (A=33739, R=33709, C=202156)
+    15 : 338143 (A=42313, R=42272, C=253558)
+    16 : 279149 (A=35024, R=34987, C=209138)
+    17 : 260024 (A=32672, R=32638, C=194714)
+    18 : 285247 (A=35583, R=35553, C=214111)
+    19 : 275074 (A=34368, R=34342, C=206364)
+    20 : 254652 (A=32050, R=32028, C=190574)
+    21 : 272061 (A=34082, R=34048, C=203931)
+    22 : 342651 (A=42941, R=42894, C=256816)
+    23 : 264660 (A=33049, R=33028, C=198583)
+    24 : 221304 (A=27623, R=27596, C=166085)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 50
 Initial size        = 256
 Range               = 262144
 Write rate          = 50%
-List implementation = IntSetLinkedListSynchronized
+List implementation = IntSetLinkedListGlobalLock
 
 Starting threads... 0 1
 End of warmup phase... 0 1
@@ -259,45 +259,20 @@ RESULTS:
 
   Warmup duration (ms) = 2000
   Test duration (ms)   = 10000
-  Throughput (ops/s)   = 1401
-  Nb iterations        = 14011780
-  Stats                = A=3505374, R=3501783, C=7004623
-    0 : 3775767 (A=944765, R=943815, C=1887187)
-    1 : 10236013 (A=2560609, R=2557968, C=5117436)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 50
+  Throughput (ops/s)   = 1174
+  Nb iterations        = 11746003
+  Stats                = A=2937443, R=2934579, C=5873981
+    0 : 5765900 (A=1442388, R=1441029, C=2882483)
+    1 : 5980103 (A=1495055, R=1493550, C=2991498)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 50
 Initial size        = 256
 Range               = 262144
 Write rate          = 50%
-List implementation = IntSetLinkedListSynchronized
+List implementation = IntSetLinkedListGlobalLock
 
 Starting threads... 0 1 2 3 4
 End of warmup phase... 0 1 2 3 4
 End of test phase... 0 1 2 3 4
-Waiting for threads to finish...
-All threads returned successfully
-Validating...
-Validated successfully
-RESULTS:
-
-  Warmup duration (ms) = 2000
-  Test duration (ms)   = 10001
-  Throughput (ops/s)   = 1128
-  Nb iterations        = 11285091
-  Stats                = A=2823124, R=2820294, C=5641673
-    0 : 2645864 (A=662162, R=661481, C=1322221)
-    1 : 2507061 (A=627554, R=626918, C=1252589)
-    2 : 2481701 (A=620542, R=619938, C=1241221)
-    3 : 826796 (A=206941, R=206696, C=413159)
-    4 : 2823669 (A=705925, R=705261, C=1412483)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 50
-Initial size        = 256
-Range               = 262144
-Write rate          = 50%
-List implementation = IntSetLinkedListSynchronized
-
-Starting threads... 0 1 2 3 4 5 6 7 8 9
-End of warmup phase... 0 1 2 3 4 5 6 7 8 9
-End of test phase... 0 1 2 3 4 5 6 7 8 9
 Waiting for threads to finish...
 All threads returned successfully
 Validating...
@@ -306,116 +281,19 @@ RESULTS:
 
   Warmup duration (ms) = 2000
   Test duration (ms)   = 10004
-  Throughput (ops/s)   = 859
-  Nb iterations        = 8597810
-  Stats                = A=2151027, R=2148896, C=4297887
-    0 : 1487331 (A=371858, R=371484, C=743989)
-    1 : 1191737 (A=298136, R=297818, C=595783)
-    2 : 1438606 (A=360035, R=359709, C=718862)
-    3 : 614198 (A=153480, R=153331, C=307387)
-    4 : 615867 (A=154113, R=153952, C=307802)
-    5 : 481594 (A=120595, R=120470, C=240529)
-    6 : 724363 (A=181551, R=181375, C=361437)
-    7 : 595565 (A=149000, R=148844, C=297721)
-    8 : 721452 (A=180150, R=179978, C=361324)
-    9 : 727097 (A=182109, R=181935, C=363053)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 50
+  Throughput (ops/s)   = 815
+  Nb iterations        = 8155221
+  Stats                = A=2040322, R=2038335, C=4076564
+    0 : 1694124 (A=423670, R=423232, C=847222)
+    1 : 1607726 (A=401892, R=401497, C=804337)
+    2 : 1699022 (A=424822, R=424407, C=849793)
+    3 : 1549715 (A=388077, R=387723, C=773915)
+    4 : 1604634 (A=401861, R=401476, C=801297)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 50
 Initial size        = 256
 Range               = 262144
 Write rate          = 50%
-List implementation = IntSetLinkedListSynchronized
-
-Starting threads... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-End of warmup phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-End of test phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-Waiting for threads to finish...
-All threads returned successfully
-Validating...
-Validated successfully
-RESULTS:
-
-  Warmup duration (ms) = 2000
-  Test duration (ms)   = 10001
-  Throughput (ops/s)   = 730
-  Nb iterations        = 7302123
-  Stats                = A=1827644, R=1825810, C=3648669
-    0 : 1121731 (A=280858, R=280560, C=560313)
-    1 : 342657 (A=85871, R=85762, C=171024)
-    2 : 342352 (A=85456, R=85359, C=171537)
-    3 : 200340 (A=50281, R=50240, C=99819)
-    4 : 352892 (A=88376, R=88278, C=176238)
-    5 : 226909 (A=56731, R=56670, C=113508)
-    6 : 281210 (A=70332, R=70268, C=140610)
-    7 : 263933 (A=66132, R=66063, C=131738)
-    8 : 271577 (A=68075, R=68015, C=135487)
-    9 : 166981 (A=41780, R=41744, C=83457)
-    10 : 312249 (A=77960, R=77894, C=156395)
-    11 : 252641 (A=63343, R=63284, C=126014)
-    12 : 235174 (A=58835, R=58775, C=117564)
-    13 : 186391 (A=46627, R=46580, C=93184)
-    14 : 290756 (A=72790, R=72732, C=145234)
-    15 : 273775 (A=68501, R=68438, C=136836)
-    16 : 233763 (A=58435, R=58378, C=116950)
-    17 : 171196 (A=42816, R=42778, C=85602)
-    18 : 279830 (A=70084, R=70016, C=139730)
-    19 : 269054 (A=67139, R=67062, C=134853)
-    20 : 217790 (A=54644, R=54587, C=108559)
-    21 : 281588 (A=70443, R=70357, C=140788)
-    22 : 198285 (A=49704, R=49661, C=98920)
-    23 : 239671 (A=59879, R=59829, C=119963)
-    24 : 289378 (A=72552, R=72480, C=144346)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 75
-Initial size        = 256
-Range               = 262144
-Write rate          = 75%
-List implementation = IntSetLinkedListSynchronized
-
-Starting threads... 0 1
-End of warmup phase... 0 1
-End of test phase... 0 1
-Waiting for threads to finish...
-All threads returned successfully
-Validating...
-Validated successfully
-RESULTS:
-
-  Warmup duration (ms) = 2001
-  Test duration (ms)   = 10000
-  Throughput (ops/s)   = 1229
-  Nb iterations        = 12290658
-  Stats                = A=4612218, R=4607613, C=3070827
-    0 : 3724603 (A=1398451, R=1397109, C=929043)
-    1 : 8566055 (A=3213767, R=3210504, C=2141784)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 75
-Initial size        = 256
-Range               = 262144
-Write rate          = 75%
-List implementation = IntSetLinkedListSynchronized
-
-Starting threads... 0 1 2 3 4
-End of warmup phase... 0 1 2 3 4
-End of test phase... 0 1 2 3 4
-Waiting for threads to finish...
-All threads returned successfully
-Validating...
-Validated successfully
-RESULTS:
-
-  Warmup duration (ms) = 2000
-  Test duration (ms)   = 10000
-  Throughput (ops/s)   = 1057
-  Nb iterations        = 10577899
-  Stats                = A=3969345, R=3965489, C=2643065
-    0 : 2394729 (A=898839, R=897958, C=597932)
-    1 : 2241728 (A=841473, R=840633, C=559622)
-    2 : 2357197 (A=884498, R=883624, C=589075)
-    3 : 1252620 (A=469860, R=469413, C=313347)
-    4 : 2331625 (A=874675, R=873861, C=583089)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 75
-Initial size        = 256
-Range               = 262144
-Write rate          = 75%
-List implementation = IntSetLinkedListSynchronized
+List implementation = IntSetLinkedListGlobalLock
 
 Starting threads... 0 1 2 3 4 5 6 7 8 9
 End of warmup phase... 0 1 2 3 4 5 6 7 8 9
@@ -427,25 +305,25 @@ Validated successfully
 RESULTS:
 
   Warmup duration (ms) = 2000
-  Test duration (ms)   = 10005
-  Throughput (ops/s)   = 842
-  Nb iterations        = 8426202
-  Stats                = A=3160924, R=3157827, C=2107451
-    0 : 1598909 (A=600265, R=599662, C=398982)
-    1 : 1044407 (A=391872, R=391502, C=261033)
-    2 : 1240592 (A=465774, R=465312, C=309506)
-    3 : 424568 (A=159046, R=158890, C=106632)
-    4 : 729420 (A=273305, R=273049, C=183066)
-    5 : 549433 (A=206138, R=205940, C=137355)
-    6 : 663405 (A=248760, R=248519, C=166126)
-    7 : 765941 (A=287085, R=286807, C=192049)
-    8 : 766514 (A=287664, R=287379, C=191471)
-    9 : 643013 (A=241015, R=240767, C=161231)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 75
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 833
+  Nb iterations        = 8333626
+  Stats                = A=2084950, R=2082833, C=4165843
+    0 : 940227 (A=235521, R=235273, C=469433)
+    1 : 855286 (A=213931, R=213725, C=427630)
+    2 : 818608 (A=204878, R=204695, C=409035)
+    3 : 871948 (A=218214, R=217970, C=435764)
+    4 : 874112 (A=218522, R=218302, C=437288)
+    5 : 832007 (A=207981, R=207777, C=416249)
+    6 : 835466 (A=209316, R=209102, C=417048)
+    7 : 756263 (A=188818, R=188607, C=378838)
+    8 : 788235 (A=197224, R=197022, C=393989)
+    9 : 761474 (A=190545, R=190360, C=380569)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 50
 Initial size        = 256
 Range               = 262144
-Write rate          = 75%
-List implementation = IntSetLinkedListSynchronized
+Write rate          = 50%
+List implementation = IntSetLinkedListGlobalLock
 
 Starting threads... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
 End of warmup phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
@@ -458,39 +336,161 @@ RESULTS:
 
   Warmup duration (ms) = 2000
   Test duration (ms)   = 10000
-  Throughput (ops/s)   = 661
-  Nb iterations        = 6617977
-  Stats                = A=2483176, R=2480581, C=1654220
-    0 : 1580814 (A=593216, R=592584, C=395014)
-    1 : 277771 (A=104198, R=104081, C=69492)
-    2 : 336465 (A=126116, R=125999, C=84350)
-    3 : 163227 (A=61183, R=61119, C=40925)
-    4 : 210641 (A=79042, R=78972, C=52627)
-    5 : 221209 (A=83089, R=82993, C=55127)
-    6 : 223513 (A=83884, R=83797, C=55832)
-    7 : 153658 (A=57601, R=57531, C=38526)
-    8 : 261536 (A=98202, R=98088, C=65246)
-    9 : 225705 (A=84625, R=84533, C=56547)
-    10 : 226144 (A=84867, R=84778, C=56499)
-    11 : 201590 (A=75642, R=75563, C=50385)
-    12 : 263071 (A=98857, R=98761, C=65453)
-    13 : 205813 (A=77123, R=77048, C=51642)
-    14 : 185338 (A=69641, R=69586, C=46111)
-    15 : 125268 (A=46938, R=46890, C=31440)
-    16 : 186947 (A=70130, R=70071, C=46746)
-    17 : 155115 (A=58266, R=58199, C=38650)
-    18 : 281956 (A=105640, R=105520, C=70796)
-    19 : 205987 (A=77286, R=77214, C=51487)
-    20 : 198946 (A=74641, R=74569, C=49736)
-    21 : 141078 (A=52847, R=52786, C=35445)
-    22 : 263592 (A=99070, R=98964, C=65558)
-    23 : 149306 (A=56080, R=56005, C=37221)
-    24 : 173287 (A=64992, R=64930, C=43365)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 100
+  Throughput (ops/s)   = 544
+  Nb iterations        = 5445715
+  Stats                = A=1361165, R=1359732, C=2724818
+    0 : 244776 (A=61021, R=60951, C=122804)
+    1 : 170462 (A=42556, R=42505, C=85401)
+    2 : 191400 (A=47955, R=47915, C=95530)
+    3 : 218412 (A=54665, R=54603, C=109144)
+    4 : 232845 (A=58159, R=58093, C=116593)
+    5 : 238185 (A=59746, R=59684, C=118755)
+    6 : 220339 (A=54901, R=54847, C=110591)
+    7 : 197891 (A=49365, R=49307, C=99219)
+    8 : 210849 (A=52982, R=52923, C=104944)
+    9 : 224088 (A=56137, R=56087, C=111864)
+    10 : 211918 (A=52969, R=52911, C=106038)
+    11 : 242957 (A=60717, R=60665, C=121575)
+    12 : 202694 (A=50596, R=50536, C=101562)
+    13 : 230896 (A=57743, R=57702, C=115451)
+    14 : 208408 (A=52114, R=52077, C=104217)
+    15 : 228401 (A=56854, R=56795, C=114752)
+    16 : 179433 (A=44781, R=44719, C=89933)
+    17 : 233197 (A=58197, R=58128, C=116872)
+    18 : 236523 (A=59071, R=59010, C=118442)
+    19 : 233697 (A=58324, R=58252, C=117121)
+    20 : 194057 (A=48450, R=48404, C=97203)
+    21 : 218598 (A=54904, R=54849, C=108845)
+    22 : 249851 (A=62454, R=62378, C=125019)
+    23 : 207403 (A=51902, R=51844, C=103657)
+    24 : 218435 (A=54602, R=54547, C=109286)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 75
+Initial size        = 256
+Range               = 262144
+Write rate          = 75%
+List implementation = IntSetLinkedListGlobalLock
+
+Starting threads... 0 1
+End of warmup phase... 0 1
+End of test phase... 0 1
+Waiting for threads to finish...
+All threads returned successfully
+Validating...
+Validated successfully
+RESULTS:
+
+  Warmup duration (ms) = 2000
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 812
+  Nb iterations        = 8120233
+  Stats                = A=3045765, R=3042785, C=2031683
+    0 : 3942368 (A=1479371, R=1477904, C=985093)
+    1 : 4177865 (A=1566394, R=1564881, C=1046590)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 75
+Initial size        = 256
+Range               = 262144
+Write rate          = 75%
+List implementation = IntSetLinkedListGlobalLock
+
+Starting threads... 0 1 2 3 4
+End of warmup phase... 0 1 2 3 4
+End of test phase... 0 1 2 3 4
+Waiting for threads to finish...
+All threads returned successfully
+Validating...
+Validated successfully
+RESULTS:
+
+  Warmup duration (ms) = 2001
+  Test duration (ms)   = 10004
+  Throughput (ops/s)   = 881
+  Nb iterations        = 8815488
+  Stats                = A=3307293, R=3304010, C=2204185
+    0 : 1877554 (A=704531, R=703849, C=469174)
+    1 : 1746862 (A=655378, R=654765, C=436719)
+    2 : 1705876 (A=639785, R=639110, C=426981)
+    3 : 1792876 (A=672275, R=671583, C=449018)
+    4 : 1692320 (A=635324, R=634703, C=422293)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 75
+Initial size        = 256
+Range               = 262144
+Write rate          = 75%
+List implementation = IntSetLinkedListGlobalLock
+
+Starting threads... 0 1 2 3 4 5 6 7 8 9
+End of warmup phase... 0 1 2 3 4 5 6 7 8 9
+End of test phase... 0 1 2 3 4 5 6 7 8 9
+Waiting for threads to finish...
+All threads returned successfully
+Validating...
+Validated successfully
+RESULTS:
+
+  Warmup duration (ms) = 2000
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 502
+  Nb iterations        = 5021462
+  Stats                = A=1885002, R=1883193, C=1253267
+    0 : 485517 (A=182078, R=181894, C=121545)
+    1 : 526064 (A=197344, R=197148, C=131572)
+    2 : 557942 (A=209620, R=209428, C=138894)
+    3 : 511855 (A=191848, R=191665, C=128342)
+    4 : 451566 (A=169609, R=169443, C=112514)
+    5 : 490138 (A=184149, R=183973, C=122016)
+    6 : 559846 (A=210413, R=210209, C=139224)
+    7 : 448486 (A=168344, R=168181, C=111961)
+    8 : 454752 (A=170567, R=170404, C=113781)
+    9 : 535296 (A=201030, R=200848, C=133418)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 75
+Initial size        = 256
+Range               = 262144
+Write rate          = 75%
+List implementation = IntSetLinkedListGlobalLock
+
+Starting threads... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+End of warmup phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+End of test phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+Waiting for threads to finish...
+All threads returned successfully
+Validating...
+Validated successfully
+RESULTS:
+
+  Warmup duration (ms) = 2000
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 412
+  Nb iterations        = 4126659
+  Stats                = A=1548348, R=1546727, C=1031584
+    0 : 167287 (A=62790, R=62724, C=41773)
+    1 : 144870 (A=54445, R=54401, C=36024)
+    2 : 174806 (A=65698, R=65632, C=43476)
+    3 : 148033 (A=55508, R=55443, C=37082)
+    4 : 183468 (A=68898, R=68813, C=45757)
+    5 : 153902 (A=57815, R=57748, C=38339)
+    6 : 193568 (A=72586, R=72511, C=48471)
+    7 : 160510 (A=60280, R=60217, C=40013)
+    8 : 142089 (A=53250, R=53186, C=35653)
+    9 : 177249 (A=66574, R=66509, C=44166)
+    10 : 136886 (A=51235, R=51189, C=34462)
+    11 : 152669 (A=57109, R=57058, C=38502)
+    12 : 174669 (A=65421, R=65369, C=43879)
+    13 : 163304 (A=61311, R=61249, C=40744)
+    14 : 151468 (A=56852, R=56791, C=37825)
+    15 : 139996 (A=52579, R=52522, C=34895)
+    16 : 190945 (A=71660, R=71570, C=47715)
+    17 : 175598 (A=66007, R=65938, C=43653)
+    18 : 188007 (A=70409, R=70329, C=47269)
+    19 : 135337 (A=50801, R=50749, C=33787)
+    20 : 168769 (A=63337, R=63279, C=42153)
+    21 : 203330 (A=76220, R=76144, C=50966)
+    22 : 168441 (A=63168, R=63091, C=42182)
+    23 : 161445 (A=60650, R=60595, C=40200)
+    24 : 170013 (A=63745, R=63670, C=42598)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 100
 Initial size        = 256
 Range               = 262144
 Write rate          = 100%
-List implementation = IntSetLinkedListSynchronized
+List implementation = IntSetLinkedListGlobalLock
 
 Starting threads... 0 1
 End of warmup phase... 0 1
@@ -503,16 +503,16 @@ RESULTS:
 
   Warmup duration (ms) = 2000
   Test duration (ms)   = 10003
-  Throughput (ops/s)   = 1122
-  Nb iterations        = 11231593
-  Stats                = A=5618521, R=5613072, C=0
-    0 : 5997836 (A=3000376, R=2997460, C=0)
-    1 : 5233757 (A=2618145, R=2615612, C=0)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 100
+  Throughput (ops/s)   = 924
+  Nb iterations        = 9251096
+  Stats                = A=4627853, R=4623243, C=0
+    0 : 4293038 (A=2147584, R=2145454, C=0)
+    1 : 4958058 (A=2480269, R=2477789, C=0)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 100
 Initial size        = 256
 Range               = 262144
 Write rate          = 100%
-List implementation = IntSetLinkedListSynchronized
+List implementation = IntSetLinkedListGlobalLock
 
 Starting threads... 0 1 2 3 4
 End of warmup phase... 0 1 2 3 4
@@ -524,20 +524,20 @@ Validated successfully
 RESULTS:
 
   Warmup duration (ms) = 2001
-  Test duration (ms)   = 10003
-  Throughput (ops/s)   = 1080
-  Nb iterations        = 10805295
-  Stats                = A=5405261, R=5400034, C=0
-    0 : 3238034 (A=1619802, R=1618232, C=0)
-    1 : 2262650 (A=1131895, R=1130755, C=0)
-    2 : 2021872 (A=1011429, R=1010443, C=0)
-    3 : 1267462 (A=634043, R=633419, C=0)
-    4 : 2015277 (A=1008092, R=1007185, C=0)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 100
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 610
+  Nb iterations        = 6100439
+  Stats                = A=3051713, R=3048726, C=0
+    0 : 1245227 (A=622925, R=622302, C=0)
+    1 : 1217855 (A=609220, R=608635, C=0)
+    2 : 1262888 (A=631742, R=631146, C=0)
+    3 : 1194517 (A=597544, R=596973, C=0)
+    4 : 1179952 (A=590282, R=589670, C=0)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 100
 Initial size        = 256
 Range               = 262144
 Write rate          = 100%
-List implementation = IntSetLinkedListSynchronized
+List implementation = IntSetLinkedListGlobalLock
 
 Starting threads... 0 1 2 3 4 5 6 7 8 9
 End of warmup phase... 0 1 2 3 4 5 6 7 8 9
@@ -549,25 +549,25 @@ Validated successfully
 RESULTS:
 
   Warmup duration (ms) = 2000
-  Test duration (ms)   = 10005
-  Throughput (ops/s)   = 836
-  Nb iterations        = 8373776
-  Stats                = A=4188968, R=4184808, C=0
-    0 : 1959498 (A=980225, R=979273, C=0)
-    1 : 935165 (A=467836, R=467329, C=0)
-    2 : 1249387 (A=624983, R=624404, C=0)
-    3 : 602174 (A=301254, R=300920, C=0)
-    4 : 861298 (A=430866, R=430432, C=0)
-    5 : 414736 (A=207470, R=207266, C=0)
-    6 : 698470 (A=349401, R=349069, C=0)
-    7 : 484716 (A=242483, R=242233, C=0)
-    8 : 552179 (A=276229, R=275950, C=0)
-    9 : 616153 (A=308221, R=307932, C=0)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark Synchronized -r 262144 -i 256 -w 100
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 458
+  Nb iterations        = 4589854
+  Stats                = A=2296114, R=2293740, C=0
+    0 : 509196 (A=254715, R=254481, C=0)
+    1 : 489591 (A=244924, R=244667, C=0)
+    2 : 419680 (A=209946, R=209734, C=0)
+    3 : 505641 (A=252952, R=252689, C=0)
+    4 : 441161 (A=220693, R=220468, C=0)
+    5 : 461545 (A=230897, R=230648, C=0)
+    6 : 447236 (A=223729, R=223507, C=0)
+    7 : 471485 (A=235871, R=235614, C=0)
+    8 : 460854 (A=230558, R=230296, C=0)
+    9 : 383465 (A=191829, R=191636, C=0)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark GlobalLock -r 262144 -i 256 -w 100
 Initial size        = 256
 Range               = 262144
 Write rate          = 100%
-List implementation = IntSetLinkedListSynchronized
+List implementation = IntSetLinkedListGlobalLock
 
 Starting threads... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
 End of warmup phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
@@ -579,32 +579,32 @@ Validated successfully
 RESULTS:
 
   Warmup duration (ms) = 2000
-  Test duration (ms)   = 10005
-  Throughput (ops/s)   = 664
-  Nb iterations        = 6646742
-  Stats                = A=3325073, R=3321669, C=0
-    0 : 1803872 (A=902403, R=901469, C=0)
-    1 : 278403 (A=139275, R=139128, C=0)
-    2 : 311774 (A=155963, R=155811, C=0)
-    3 : 179348 (A=89711, R=89637, C=0)
-    4 : 217820 (A=108961, R=108859, C=0)
-    5 : 131207 (A=65631, R=65576, C=0)
-    6 : 237726 (A=118926, R=118800, C=0)
-    7 : 169538 (A=84817, R=84721, C=0)
-    8 : 209334 (A=104720, R=104614, C=0)
-    9 : 110011 (A=55040, R=54971, C=0)
-    10 : 200460 (A=100277, R=100183, C=0)
-    11 : 186319 (A=93207, R=93112, C=0)
-    12 : 189733 (A=94906, R=94827, C=0)
-    13 : 142013 (A=71047, R=70966, C=0)
-    14 : 163620 (A=81863, R=81757, C=0)
-    15 : 207666 (A=103882, R=103784, C=0)
-    16 : 248610 (A=124373, R=124237, C=0)
-    17 : 155104 (A=77591, R=77513, C=0)
-    18 : 238676 (A=119404, R=119272, C=0)
-    19 : 156072 (A=78080, R=77992, C=0)
-    20 : 247268 (A=123696, R=123572, C=0)
-    21 : 187975 (A=94036, R=93939, C=0)
-    22 : 228114 (A=114109, R=114005, C=0)
-    23 : 224330 (A=112231, R=112099, C=0)
-    24 : 221749 (A=110924, R=110825, C=0)
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 412
+  Nb iterations        = 4126455
+  Stats                = A=2064305, R=2062150, C=0
+    0 : 154841 (A=77463, R=77378, C=0)
+    1 : 156502 (A=78286, R=78216, C=0)
+    2 : 154870 (A=77480, R=77390, C=0)
+    3 : 148468 (A=74267, R=74201, C=0)
+    4 : 183320 (A=91708, R=91612, C=0)
+    5 : 156241 (A=78160, R=78081, C=0)
+    6 : 159294 (A=79689, R=79605, C=0)
+    7 : 159106 (A=79599, R=79507, C=0)
+    8 : 142744 (A=71411, R=71333, C=0)
+    9 : 158373 (A=79232, R=79141, C=0)
+    10 : 196335 (A=98219, R=98116, C=0)
+    11 : 178648 (A=89370, R=89278, C=0)
+    12 : 193508 (A=96813, R=96695, C=0)
+    13 : 143940 (A=72007, R=71933, C=0)
+    14 : 169282 (A=84685, R=84597, C=0)
+    15 : 203027 (A=101565, R=101462, C=0)
+    16 : 168448 (A=84267, R=84181, C=0)
+    17 : 148129 (A=74106, R=74023, C=0)
+    18 : 179531 (A=89813, R=89718, C=0)
+    19 : 179541 (A=89814, R=89727, C=0)
+    20 : 158771 (A=79427, R=79344, C=0)
+    21 : 125627 (A=62846, R=62781, C=0)
+    22 : 159748 (A=79911, R=79837, C=0)
+    23 : 191442 (A=95769, R=95673, C=0)
+    24 : 156719 (A=78398, R=78321, C=0)
