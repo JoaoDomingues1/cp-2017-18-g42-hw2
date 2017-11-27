@@ -9,8 +9,8 @@ write_perc=${3:-50}
 
 
 #list_impl=LinkedList
-list_impl=Synchronized
-#list_impl=GlobalLock
+#list_impl=Synchronized
+list_impl=GlobalLock
 #list_impl=GlobalRWLock
 #list_impl=PerNodeLock
 #list_impl=OptimisticPerNodeLock
