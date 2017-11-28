@@ -14,8 +14,8 @@ write_perc=${3:-50}
 #list_impl=GlobalRWLock
 #list_impl=PerNodeLock
 #list_impl=OptimisticPerNodeLock
-list_impl=LazyPerNodeLock
-#list_impl=LockFree
+#list_impl=LazyPerNodeLock
+list_impl=LockFree
 value_range=262144
 initial_size=256
 
