@@ -1,8 +1,8 @@
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 0
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 0
 Initial size        = 256
 Range               = 262144
 Write rate          = 0%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
+List implementation = IntSetLinkedListPerNodeLock
 
 Starting threads... 0 1
 End of warmup phase... 0 1
@@ -15,16 +15,16 @@ RESULTS:
 
   Warmup duration (ms) = 2001
   Test duration (ms)   = 10000
-  Throughput (ops/s)   = 1728
-  Nb iterations        = 17282378
-  Stats                = A=0, R=0, C=17282378
-    0 : 8812428 (A=0, R=0, C=8812428)
-    1 : 8469950 (A=0, R=0, C=8469950)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 0
+  Throughput (ops/s)   = 54
+  Nb iterations        = 541722
+  Stats                = A=0, R=0, C=541722
+    0 : 261899 (A=0, R=0, C=261899)
+    1 : 279823 (A=0, R=0, C=279823)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 0
 Initial size        = 256
 Range               = 262144
 Write rate          = 0%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
+List implementation = IntSetLinkedListPerNodeLock
 
 Starting threads... 0 1 2 3 4
 End of warmup phase... 0 1 2 3 4
@@ -35,21 +35,21 @@ Validating...
 Validated successfully
 RESULTS:
 
-  Warmup duration (ms) = 2001
+  Warmup duration (ms) = 2000
   Test duration (ms)   = 10000
-  Throughput (ops/s)   = 1366
-  Nb iterations        = 13665986
-  Stats                = A=0, R=0, C=13665986
-    0 : 2773261 (A=0, R=0, C=2773261)
-    1 : 2790095 (A=0, R=0, C=2790095)
-    2 : 2805650 (A=0, R=0, C=2805650)
-    3 : 2580228 (A=0, R=0, C=2580228)
-    4 : 2716752 (A=0, R=0, C=2716752)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 0
+  Throughput (ops/s)   = 65
+  Nb iterations        = 654252
+  Stats                = A=0, R=0, C=654252
+    0 : 132518 (A=0, R=0, C=132518)
+    1 : 127620 (A=0, R=0, C=127620)
+    2 : 131660 (A=0, R=0, C=131660)
+    3 : 133937 (A=0, R=0, C=133937)
+    4 : 128517 (A=0, R=0, C=128517)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 0
 Initial size        = 256
 Range               = 262144
 Write rate          = 0%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
+List implementation = IntSetLinkedListPerNodeLock
 
 Starting threads... 0 1 2 3 4 5 6 7 8 9
 End of warmup phase... 0 1 2 3 4 5 6 7 8 9
@@ -60,26 +60,148 @@ Validating...
 Validated successfully
 RESULTS:
 
-  Warmup duration (ms) = 2001
+  Warmup duration (ms) = 2000
   Test duration (ms)   = 10000
-  Throughput (ops/s)   = 1369
-  Nb iterations        = 13697799
-  Stats                = A=0, R=0, C=13697799
-    0 : 1418220 (A=0, R=0, C=1418220)
-    1 : 1391179 (A=0, R=0, C=1391179)
-    2 : 1395484 (A=0, R=0, C=1395484)
-    3 : 1349913 (A=0, R=0, C=1349913)
-    4 : 1345986 (A=0, R=0, C=1345986)
-    5 : 1333350 (A=0, R=0, C=1333350)
-    6 : 1351333 (A=0, R=0, C=1351333)
-    7 : 1347557 (A=0, R=0, C=1347557)
-    8 : 1393926 (A=0, R=0, C=1393926)
-    9 : 1370851 (A=0, R=0, C=1370851)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 0
+  Throughput (ops/s)   = 54
+  Nb iterations        = 548036
+  Stats                = A=0, R=0, C=548036
+    0 : 51596 (A=0, R=0, C=51596)
+    1 : 54041 (A=0, R=0, C=54041)
+    2 : 61209 (A=0, R=0, C=61209)
+    3 : 50188 (A=0, R=0, C=50188)
+    4 : 55466 (A=0, R=0, C=55466)
+    5 : 54388 (A=0, R=0, C=54388)
+    6 : 54060 (A=0, R=0, C=54060)
+    7 : 57505 (A=0, R=0, C=57505)
+    8 : 57312 (A=0, R=0, C=57312)
+    9 : 52271 (A=0, R=0, C=52271)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 0
 Initial size        = 256
 Range               = 262144
 Write rate          = 0%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
+List implementation = IntSetLinkedListPerNodeLock
+
+Starting threads... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+End of warmup phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+End of test phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+Waiting for threads to finish...
+All threads returned successfully
+Validating...
+Validated successfully
+RESULTS:
+
+  Warmup duration (ms) = 2000
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 58
+  Nb iterations        = 587089
+  Stats                = A=0, R=0, C=587089
+    0 : 22433 (A=0, R=0, C=22433)
+    1 : 23328 (A=0, R=0, C=23328)
+    2 : 26661 (A=0, R=0, C=26661)
+    3 : 27743 (A=0, R=0, C=27743)
+    4 : 17603 (A=0, R=0, C=17603)
+    5 : 26274 (A=0, R=0, C=26274)
+    6 : 22829 (A=0, R=0, C=22829)
+    7 : 22309 (A=0, R=0, C=22309)
+    8 : 24242 (A=0, R=0, C=24242)
+    9 : 24379 (A=0, R=0, C=24379)
+    10 : 25068 (A=0, R=0, C=25068)
+    11 : 23855 (A=0, R=0, C=23855)
+    12 : 27189 (A=0, R=0, C=27189)
+    13 : 20744 (A=0, R=0, C=20744)
+    14 : 22501 (A=0, R=0, C=22501)
+    15 : 21665 (A=0, R=0, C=21665)
+    16 : 27613 (A=0, R=0, C=27613)
+    17 : 23447 (A=0, R=0, C=23447)
+    18 : 23274 (A=0, R=0, C=23274)
+    19 : 20479 (A=0, R=0, C=20479)
+    20 : 19742 (A=0, R=0, C=19742)
+    21 : 19436 (A=0, R=0, C=19436)
+    22 : 24700 (A=0, R=0, C=24700)
+    23 : 23104 (A=0, R=0, C=23104)
+    24 : 26471 (A=0, R=0, C=26471)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 25
+Initial size        = 256
+Range               = 262144
+Write rate          = 25%
+List implementation = IntSetLinkedListPerNodeLock
+
+Starting threads... 0 1
+End of warmup phase... 0 1
+End of test phase... 0 1
+Waiting for threads to finish...
+All threads returned successfully
+Validating...
+Validated successfully
+RESULTS:
+
+  Warmup duration (ms) = 2000
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 38
+  Nb iterations        = 385515
+  Stats                = A=48076, R=48018, C=289421
+    0 : 249176 (A=31078, R=31043, C=187055)
+    1 : 136339 (A=16998, R=16975, C=102366)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 25
+Initial size        = 256
+Range               = 262144
+Write rate          = 25%
+List implementation = IntSetLinkedListPerNodeLock
+
+Starting threads... 0 1 2 3 4
+End of warmup phase... 0 1 2 3 4
+End of test phase... 0 1 2 3 4
+Waiting for threads to finish...
+All threads returned successfully
+Validating...
+Validated successfully
+RESULTS:
+
+  Warmup duration (ms) = 2000
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 43
+  Nb iterations        = 431884
+  Stats                = A=53923, R=53868, C=324093
+    0 : 93702 (A=11676, R=11668, C=70358)
+    1 : 83331 (A=10389, R=10384, C=62558)
+    2 : 84140 (A=10491, R=10477, C=63172)
+    3 : 88658 (A=11124, R=11113, C=66421)
+    4 : 82053 (A=10243, R=10226, C=61584)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 25
+Initial size        = 256
+Range               = 262144
+Write rate          = 25%
+List implementation = IntSetLinkedListPerNodeLock
+
+Starting threads... 0 1 2 3 4 5 6 7 8 9
+End of warmup phase... 0 1 2 3 4 5 6 7 8 9
+End of test phase... 0 1 2 3 4 5 6 7 8 9
+Waiting for threads to finish...
+All threads returned successfully
+Validating...
+Validated successfully
+RESULTS:
+
+  Warmup duration (ms) = 2000
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 49
+  Nb iterations        = 498571
+  Stats                = A=62246, R=62156, C=374169
+    0 : 46681 (A=5822, R=5818, C=35041)
+    1 : 51637 (A=6535, R=6526, C=38576)
+    2 : 51113 (A=6367, R=6359, C=38387)
+    3 : 49129 (A=6211, R=6201, C=36717)
+    4 : 56057 (A=6935, R=6926, C=42196)
+    5 : 51057 (A=6396, R=6386, C=38275)
+    6 : 50382 (A=6298, R=6290, C=37794)
+    7 : 46138 (A=5755, R=5744, C=34639)
+    8 : 47497 (A=5890, R=5881, C=35726)
+    9 : 48880 (A=6037, R=6025, C=36818)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 25
+Initial size        = 256
+Range               = 262144
+Write rate          = 25%
+List implementation = IntSetLinkedListPerNodeLock
 
 Starting threads... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
 End of warmup phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
@@ -92,39 +214,39 @@ RESULTS:
 
   Warmup duration (ms) = 2000
   Test duration (ms)   = 10003
-  Throughput (ops/s)   = 1442
-  Nb iterations        = 14434291
-  Stats                = A=0, R=0, C=14434291
-    0 : 583341 (A=0, R=0, C=583341)
-    1 : 585369 (A=0, R=0, C=585369)
-    2 : 577806 (A=0, R=0, C=577806)
-    3 : 574862 (A=0, R=0, C=574862)
-    4 : 578189 (A=0, R=0, C=578189)
-    5 : 568492 (A=0, R=0, C=568492)
-    6 : 568955 (A=0, R=0, C=568955)
-    7 : 581763 (A=0, R=0, C=581763)
-    8 : 582699 (A=0, R=0, C=582699)
-    9 : 578426 (A=0, R=0, C=578426)
-    10 : 579180 (A=0, R=0, C=579180)
-    11 : 576178 (A=0, R=0, C=576178)
-    12 : 581166 (A=0, R=0, C=581166)
-    13 : 584888 (A=0, R=0, C=584888)
-    14 : 579163 (A=0, R=0, C=579163)
-    15 : 565126 (A=0, R=0, C=565126)
-    16 : 573304 (A=0, R=0, C=573304)
-    17 : 577281 (A=0, R=0, C=577281)
-    18 : 575601 (A=0, R=0, C=575601)
-    19 : 575787 (A=0, R=0, C=575787)
-    20 : 571018 (A=0, R=0, C=571018)
-    21 : 581009 (A=0, R=0, C=581009)
-    22 : 583210 (A=0, R=0, C=583210)
-    23 : 575143 (A=0, R=0, C=575143)
-    24 : 576335 (A=0, R=0, C=576335)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 25
+  Throughput (ops/s)   = 46
+  Nb iterations        = 460980
+  Stats                = A=57577, R=57523, C=345880
+    0 : 19238 (A=2419, R=2418, C=14401)
+    1 : 18331 (A=2291, R=2292, C=13748)
+    2 : 19204 (A=2414, R=2414, C=14376)
+    3 : 20284 (A=2555, R=2551, C=15178)
+    4 : 17577 (A=2220, R=2219, C=13138)
+    5 : 17690 (A=2145, R=2140, C=13405)
+    6 : 15421 (A=1936, R=1936, C=11549)
+    7 : 16938 (A=2105, R=2102, C=12731)
+    8 : 19173 (A=2364, R=2359, C=14450)
+    9 : 18437 (A=2297, R=2293, C=13847)
+    10 : 17884 (A=2172, R=2171, C=13541)
+    11 : 18592 (A=2381, R=2378, C=13833)
+    12 : 18883 (A=2363, R=2362, C=14158)
+    13 : 18223 (A=2317, R=2315, C=13591)
+    14 : 20410 (A=2515, R=2514, C=15381)
+    15 : 17444 (A=2154, R=2150, C=13140)
+    16 : 19591 (A=2459, R=2457, C=14675)
+    17 : 16702 (A=2079, R=2077, C=12546)
+    18 : 18500 (A=2330, R=2328, C=13842)
+    19 : 18431 (A=2308, R=2306, C=13817)
+    20 : 18052 (A=2279, R=2274, C=13499)
+    21 : 16883 (A=2090, R=2088, C=12705)
+    22 : 19731 (A=2472, R=2472, C=14787)
+    23 : 18137 (A=2262, R=2259, C=13616)
+    24 : 21224 (A=2650, R=2648, C=15926)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 50
 Initial size        = 256
 Range               = 262144
-Write rate          = 25%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
+Write rate          = 50%
+List implementation = IntSetLinkedListPerNodeLock
 
 Starting threads... 0 1
 End of warmup phase... 0 1
@@ -135,18 +257,18 @@ Validating...
 Validated successfully
 RESULTS:
 
-  Warmup duration (ms) = 2000
+  Warmup duration (ms) = 2001
   Test duration (ms)   = 10001
-  Throughput (ops/s)   = 675
-  Nb iterations        = 6754837
-  Stats                = A=843917, R=843918, C=5067002
-    0 : 3385990 (A=423370, R=423371, C=2539249)
-    1 : 3368847 (A=420547, R=420547, C=2527753)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 25
+  Throughput (ops/s)   = 39
+  Nb iterations        = 390958
+  Stats                = A=97781, R=97685, C=195492
+    0 : 248754 (A=62419, R=62356, C=123979)
+    1 : 142204 (A=35362, R=35329, C=71513)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 50
 Initial size        = 256
 Range               = 262144
-Write rate          = 25%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
+Write rate          = 50%
+List implementation = IntSetLinkedListPerNodeLock
 
 Starting threads... 0 1 2 3 4
 End of warmup phase... 0 1 2 3 4
@@ -158,129 +280,23 @@ Validated successfully
 RESULTS:
 
   Warmup duration (ms) = 2000
-  Test duration (ms)   = 10002
-  Throughput (ops/s)   = 815
-  Nb iterations        = 8156506
-  Stats                = A=1019716, R=1019716, C=6117074
-    0 : 1617995 (A=202486, R=202486, C=1213023)
-    1 : 1688998 (A=211477, R=211478, C=1266043)
-    2 : 1668959 (A=208524, R=208523, C=1251912)
-    3 : 1585195 (A=197980, R=197980, C=1189235)
-    4 : 1595359 (A=199249, R=199249, C=1196861)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 25
+  Test duration (ms)   = 10004
+  Throughput (ops/s)   = 70
+  Nb iterations        = 706593
+  Stats                = A=176650, R=176470, C=353473
+    0 : 136670 (A=34232, R=34194, C=68244)
+    1 : 137332 (A=34329, R=34296, C=68707)
+    2 : 138436 (A=34535, R=34507, C=69394)
+    3 : 144072 (A=35901, R=35860, C=72311)
+    4 : 150083 (A=37653, R=37613, C=74817)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 50
 Initial size        = 256
 Range               = 262144
-Write rate          = 25%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
+Write rate          = 50%
+List implementation = IntSetLinkedListPerNodeLock
 
 Starting threads... 0 1 2 3 4 5 6 7 8 9
 End of warmup phase... 0 1 2 3 4 5 6 7 8 9
-End of test phase... 0 1 2 3 4 5 6 7 8 9
-Waiting for threads to finish...
-All threads returned successfully
-Validating...
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 25
-Initial size        = 256
-Range               = 262144
-Write rate          = 25%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
-
-Starting threads... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-End of warmup phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-[GC (Allocation Failure)  262144K->27320K(1005056K), 0.0383946 secs]
-End of test phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-Waiting for threads to finish...
-All threads returned successfully
-Validating...
-Validated successfully
-RESULTS:
-
-  Warmup duration (ms) = 2000
-  Test duration (ms)   = 10035
-  Throughput (ops/s)   = 917
-  Nb iterations        = 9211109
-  Stats                = A=1152346, R=1152339, C=6906424
-    0 : 370601 (A=46464, R=46463, C=277674)
-    1 : 368585 (A=46060, R=46059, C=276466)
-    2 : 365542 (A=45815, R=45814, C=273913)
-    3 : 369025 (A=46209, R=46209, C=276607)
-    4 : 367428 (A=46087, R=46087, C=275254)
-    5 : 368561 (A=45968, R=45969, C=276624)
-    6 : 367749 (A=46008, R=46008, C=275733)
-    7 : 370595 (A=46512, R=46511, C=277572)
-    8 : 371446 (A=46353, R=46353, C=278740)
-    9 : 366559 (A=45998, R=45998, C=274563)
-    10 : 371258 (A=46429, R=46428, C=278401)
-    11 : 369056 (A=46127, R=46126, C=276803)
-    12 : 371648 (A=46499, R=46499, C=278650)
-    13 : 373099 (A=46597, R=46596, C=279906)
-    14 : 368584 (A=46082, R=46081, C=276421)
-    15 : 363982 (A=45662, R=45662, C=272658)
-    16 : 367480 (A=46102, R=46101, C=275277)
-    17 : 368696 (A=46031, R=46031, C=276634)
-    18 : 369788 (A=45962, R=45962, C=277864)
-    19 : 368183 (A=46197, R=46198, C=275788)
-    20 : 368978 (A=46013, R=46013, C=276952)
-    21 : 368417 (A=46045, R=46044, C=276328)
-    22 : 367674 (A=46004, R=46005, C=275665)
-    23 : 361481 (A=45338, R=45338, C=270805)
-    24 : 366694 (A=45784, R=45784, C=275126)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 50
-Initial size        = 256
-Range               = 262144
-Write rate          = 50%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
-
-Starting threads... 0 1
-End of warmup phase... 0 1
-End of test phase... 0 1
-Waiting for threads to finish...
-All threads returned successfully
-Validating...
-Validated successfully
-RESULTS:
-
-  Warmup duration (ms) = 2000
-  Test duration (ms)   = 10000
-  Throughput (ops/s)   = 553
-  Nb iterations        = 5536975
-  Stats                = A=1385217, R=1385218, C=2766540
-    0 : 2793674 (A=698894, R=698894, C=1395886)
-    1 : 2743301 (A=686323, R=686324, C=1370654)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 50
-Initial size        = 256
-Range               = 262144
-Write rate          = 50%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
-
-Starting threads... 0 1 2 3 4
-End of warmup phase... 0 1 2 3 4
-End of test phase... 0 1 2 3 4
-Waiting for threads to finish...
-All threads returned successfully
-Validating...
-Validated successfully
-RESULTS:
-
-  Warmup duration (ms) = 2000
-  Test duration (ms)   = 10005
-  Throughput (ops/s)   = 711
-  Nb iterations        = 7114392
-  Stats                = A=1778743, R=1778742, C=3556907
-    0 : 1471375 (A=368149, R=368149, C=735077)
-    1 : 1448657 (A=361660, R=361659, C=725338)
-    2 : 1414174 (A=354048, R=354048, C=706078)
-    3 : 1378847 (A=344572, R=344571, C=689704)
-    4 : 1401339 (A=350314, R=350315, C=700710)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 50
-Initial size        = 256
-Range               = 262144
-Write rate          = 50%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
-
-Starting threads... 0 1 2 3 4 5 6 7 8 9
-End of warmup phase... 0 1 2 3 4 5 6 7 8 9
-[GC (Allocation Failure)  262144K->11896K(1005056K), 0.0387756 secs]
 End of test phase... 0 1 2 3 4 5 6 7 8 9
 Waiting for threads to finish...
 All threads returned successfully
@@ -290,37 +306,69 @@ RESULTS:
 
   Warmup duration (ms) = 2001
   Test duration (ms)   = 10001
-  Throughput (ops/s)   = 1304
-  Nb iterations        = 13046839
-  Stats                = A=3262266, R=3262266, C=6522307
-    0 : 1324473 (A=330657, R=330657, C=663159)
-    1 : 1328472 (A=332241, R=332240, C=663991)
-    2 : 1315441 (A=329277, R=329277, C=656887)
-    3 : 1314907 (A=328639, R=328639, C=657629)
-    4 : 1301816 (A=325959, R=325958, C=649899)
-    5 : 1314791 (A=328645, R=328645, C=657501)
-    6 : 1283222 (A=320666, R=320666, C=641890)
-    7 : 1280548 (A=320084, R=320085, C=640379)
-    8 : 1278905 (A=319923, R=319923, C=639059)
-    9 : 1304264 (A=326175, R=326176, C=651913)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 50
+  Throughput (ops/s)   = 49
+  Nb iterations        = 492296
+  Stats                = A=123042, R=122912, C=246342
+    0 : 43623 (A=10905, R=10897, C=21821)
+    1 : 47508 (A=11868, R=11851, C=23789)
+    2 : 54393 (A=13597, R=13580, C=27216)
+    3 : 49532 (A=12305, R=12295, C=24932)
+    4 : 47817 (A=11906, R=11891, C=24020)
+    5 : 51428 (A=12889, R=12874, C=25665)
+    6 : 48319 (A=12083, R=12073, C=24163)
+    7 : 48956 (A=12206, R=12195, C=24555)
+    8 : 50263 (A=12664, R=12653, C=24946)
+    9 : 50457 (A=12619, R=12603, C=25235)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 50
 Initial size        = 256
 Range               = 262144
 Write rate          = 50%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
+List implementation = IntSetLinkedListPerNodeLock
 
 Starting threads... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
 End of warmup phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-[GC (Allocation Failure)  262144K->27288K(1005056K), 0.0420012 secs]
 End of test phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
 Waiting for threads to finish...
 All threads returned successfully
 Validating...
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 75
+Validated successfully
+RESULTS:
+
+  Warmup duration (ms) = 2000
+  Test duration (ms)   = 10003
+  Throughput (ops/s)   = 50
+  Nb iterations        = 504805
+  Stats                = A=126295, R=126147, C=252363
+    0 : 19239 (A=4796, R=4793, C=9650)
+    1 : 22581 (A=5743, R=5741, C=11097)
+    2 : 16455 (A=4097, R=4091, C=8267)
+    3 : 22081 (A=5492, R=5489, C=11100)
+    4 : 18058 (A=4521, R=4515, C=9022)
+    5 : 20779 (A=5223, R=5216, C=10340)
+    6 : 23829 (A=6007, R=5997, C=11825)
+    7 : 20591 (A=5127, R=5119, C=10345)
+    8 : 16658 (A=4184, R=4182, C=8292)
+    9 : 21338 (A=5350, R=5344, C=10644)
+    10 : 19794 (A=4923, R=4912, C=9959)
+    11 : 23896 (A=5946, R=5943, C=12007)
+    12 : 18401 (A=4624, R=4623, C=9154)
+    13 : 18619 (A=4673, R=4670, C=9276)
+    14 : 19446 (A=4843, R=4840, C=9763)
+    15 : 18078 (A=4490, R=4485, C=9103)
+    16 : 18262 (A=4540, R=4534, C=9188)
+    17 : 21731 (A=5437, R=5431, C=10863)
+    18 : 20848 (A=5191, R=5181, C=10476)
+    19 : 20742 (A=5235, R=5226, C=10281)
+    20 : 23832 (A=5980, R=5970, C=11882)
+    21 : 19674 (A=4895, R=4888, C=9891)
+    22 : 19938 (A=5028, R=5021, C=9889)
+    23 : 20740 (A=5177, R=5170, C=10393)
+    24 : 19195 (A=4773, R=4766, C=9656)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 75
 Initial size        = 256
 Range               = 262144
 Write rate          = 75%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
+List implementation = IntSetLinkedListPerNodeLock
 
 Starting threads... 0 1
 End of warmup phase... 0 1
@@ -332,21 +380,20 @@ Validated successfully
 RESULTS:
 
   Warmup duration (ms) = 2000
-  Test duration (ms)   = 10010
-  Throughput (ops/s)   = 532
-  Nb iterations        = 5332123
-  Stats                = A=2000002, R=2000001, C=1332120
-    0 : 2694502 (A=1010431, R=1010431, C=673640)
-    1 : 2637621 (A=989571, R=989570, C=658480)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 75
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 48
+  Nb iterations        = 488840
+  Stats                = A=183306, R=183123, C=122411
+    0 : 231626 (A=86789, R=86698, C=58139)
+    1 : 257214 (A=96517, R=96425, C=64272)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 75
 Initial size        = 256
 Range               = 262144
 Write rate          = 75%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
+List implementation = IntSetLinkedListPerNodeLock
 
 Starting threads... 0 1 2 3 4
 End of warmup phase... 0 1 2 3 4
-[GC (Allocation Failure)  262144K->6792K(1005056K), 0.0348818 secs]
 End of test phase... 0 1 2 3 4
 Waiting for threads to finish...
 All threads returned successfully
@@ -355,25 +402,23 @@ Validated successfully
 RESULTS:
 
   Warmup duration (ms) = 2000
-  Test duration (ms)   = 10001
-  Throughput (ops/s)   = 835
-  Nb iterations        = 8357195
-  Stats                = A=3134041, R=3134041, C=2089113
-    0 : 1668050 (A=625632, R=625632, C=416786)
-    1 : 1724648 (A=646863, R=646862, C=430923)
-    2 : 1717727 (A=644352, R=644352, C=429023)
-    3 : 1599303 (A=599318, R=599318, C=400667)
-    4 : 1647467 (A=617876, R=617877, C=411714)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 75
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 70
+  Nb iterations        = 707208
+  Stats                = A=265019, R=264761, C=177428
+    0 : 138284 (A=51849, R=51800, C=34635)
+    1 : 144474 (A=54152, R=54096, C=36226)
+    2 : 132057 (A=49463, R=49416, C=33178)
+    3 : 145084 (A=54417, R=54367, C=36300)
+    4 : 147309 (A=55138, R=55082, C=37089)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 75
 Initial size        = 256
 Range               = 262144
 Write rate          = 75%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
+List implementation = IntSetLinkedListPerNodeLock
 
 Starting threads... 0 1 2 3 4 5 6 7 8 9
 End of warmup phase... 0 1 2 3 4 5 6 7 8 9
-[GC (Allocation Failure)  262144K->11768K(1005056K), 0.0294793 secs]
-[GC (Allocation Failure)  273912K->11904K(1005056K), 0.0164512 secs]
 End of test phase... 0 1 2 3 4 5 6 7 8 9
 Waiting for threads to finish...
 All threads returned successfully
@@ -382,30 +427,28 @@ Validated successfully
 RESULTS:
 
   Warmup duration (ms) = 2001
-  Test duration (ms)   = 10000
-  Throughput (ops/s)   = 1251
-  Nb iterations        = 12514641
-  Stats                = A=4692866, R=4692866, C=3128909
-    0 : 1231232 (A=461965, R=461965, C=307302)
-    1 : 1264587 (A=474543, R=474543, C=315501)
-    2 : 1281667 (A=480346, R=480346, C=320975)
-    3 : 1263321 (A=473873, R=473872, C=315576)
-    4 : 1268120 (A=475772, R=475772, C=316576)
-    5 : 1242070 (A=465660, R=465659, C=310751)
-    6 : 1226213 (A=459584, R=459584, C=307045)
-    7 : 1260141 (A=472215, R=472215, C=315711)
-    8 : 1221028 (A=457863, R=457864, C=305301)
-    9 : 1256262 (A=471045, R=471046, C=314171)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 75
+  Test duration (ms)   = 10004
+  Throughput (ops/s)   = 57
+  Nb iterations        = 572152
+  Stats                = A=214707, R=214503, C=142942
+    0 : 50401 (A=18941, R=18926, C=12534)
+    1 : 56575 (A=21218, R=21195, C=14162)
+    2 : 54641 (A=20544, R=20522, C=13575)
+    3 : 64935 (A=24307, R=24283, C=16345)
+    4 : 54456 (A=20440, R=20421, C=13595)
+    5 : 53234 (A=20025, R=20002, C=13207)
+    6 : 62193 (A=23356, R=23346, C=15491)
+    7 : 65942 (A=24702, R=24672, C=16568)
+    8 : 52593 (A=19683, R=19665, C=13245)
+    9 : 57182 (A=21491, R=21471, C=14220)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 75
 Initial size        = 256
 Range               = 262144
 Write rate          = 75%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
+List implementation = IntSetLinkedListPerNodeLock
 
 Starting threads... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
 End of warmup phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-[GC (Allocation Failure)  262144K->27224K(1005056K), 0.0394009 secs]
-[GC (Allocation Failure)  289368K->27184K(1005056K), 0.0269096 secs]
 End of test phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
 Waiting for threads to finish...
 All threads returned successfully
@@ -413,45 +456,44 @@ Validating...
 Validated successfully
 RESULTS:
 
-  Warmup duration (ms) = 2000
-  Test duration (ms)   = 10001
-  Throughput (ops/s)   = 1228
-  Nb iterations        = 12289373
-  Stats                = A=4608211, R=4608206, C=3072956
-    0 : 487343 (A=182749, R=182749, C=121845)
-    1 : 485991 (A=182341, R=182341, C=121309)
-    2 : 499873 (A=187441, R=187440, C=124992)
-    3 : 485994 (A=182253, R=182253, C=121488)
-    4 : 489597 (A=183602, R=183602, C=122393)
-    5 : 492880 (A=185003, R=185002, C=122875)
-    6 : 498584 (A=186901, R=186902, C=124781)
-    7 : 491421 (A=184159, R=184158, C=123104)
-    8 : 488249 (A=183161, R=183161, C=121927)
-    9 : 494184 (A=185179, R=185179, C=123826)
-    10 : 492006 (A=184524, R=184524, C=122958)
-    11 : 493958 (A=185168, R=185169, C=123621)
-    12 : 494844 (A=185431, R=185430, C=123983)
-    13 : 490852 (A=184126, R=184126, C=122600)
-    14 : 491264 (A=184014, R=184014, C=123236)
-    15 : 489257 (A=183219, R=183219, C=122819)
-    16 : 497290 (A=186341, R=186340, C=124609)
-    17 : 494355 (A=185696, R=185695, C=122964)
-    18 : 485172 (A=181824, R=181824, C=121524)
-    19 : 490899 (A=184242, R=184241, C=122416)
-    20 : 496132 (A=185999, R=186000, C=124133)
-    21 : 491760 (A=184169, R=184169, C=123422)
-    22 : 495702 (A=186090, R=186089, C=123523)
-    23 : 492946 (A=184961, R=184962, C=123023)
-    24 : 478820 (A=179618, R=179617, C=119585)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 100
+  Warmup duration (ms) = 2001
+  Test duration (ms)   = 10000
+  Throughput (ops/s)   = 43
+  Nb iterations        = 439661
+  Stats                = A=165140, R=164978, C=109543
+    0 : 16935 (A=6332, R=6324, C=4279)
+    1 : 16774 (A=6264, R=6259, C=4251)
+    2 : 16446 (A=6201, R=6198, C=4047)
+    3 : 17473 (A=6587, R=6580, C=4306)
+    4 : 18066 (A=6799, R=6792, C=4475)
+    5 : 19975 (A=7531, R=7519, C=4925)
+    6 : 17995 (A=6748, R=6738, C=4509)
+    7 : 16316 (A=6117, R=6111, C=4088)
+    8 : 20028 (A=7594, R=7591, C=4843)
+    9 : 16306 (A=6097, R=6096, C=4113)
+    10 : 18482 (A=6942, R=6933, C=4607)
+    11 : 18748 (A=6997, R=6992, C=4759)
+    12 : 16280 (A=6080, R=6076, C=4124)
+    13 : 17478 (A=6573, R=6565, C=4340)
+    14 : 15995 (A=5995, R=5989, C=4011)
+    15 : 17195 (A=6455, R=6448, C=4292)
+    16 : 16177 (A=6056, R=6051, C=4070)
+    17 : 17223 (A=6489, R=6485, C=4249)
+    18 : 18786 (A=7063, R=7048, C=4675)
+    19 : 19525 (A=7318, R=7311, C=4896)
+    20 : 18348 (A=6920, R=6915, C=4513)
+    21 : 17451 (A=6613, R=6603, C=4235)
+    22 : 18439 (A=6918, R=6911, C=4610)
+    23 : 17143 (A=6456, R=6454, C=4233)
+    24 : 16077 (A=5995, R=5989, C=4093)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 2 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 100
 Initial size        = 256
 Range               = 262144
 Write rate          = 100%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
+List implementation = IntSetLinkedListPerNodeLock
 
 Starting threads... 0 1
 End of warmup phase... 0 1
-[GC (Allocation Failure)  262144K->3608K(1005056K), 0.0161016 secs]
 End of test phase... 0 1
 Waiting for threads to finish...
 All threads returned successfully
@@ -461,20 +503,19 @@ RESULTS:
 
   Warmup duration (ms) = 2000
   Test duration (ms)   = 10000
-  Throughput (ops/s)   = 515
-  Nb iterations        = 5157562
-  Stats                = A=2578780, R=2578782, C=0
-    0 : 2580571 (A=1290285, R=1290286, C=0)
-    1 : 2576991 (A=1288495, R=1288496, C=0)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 100
+  Throughput (ops/s)   = 62
+  Nb iterations        = 625427
+  Stats                = A=312865, R=312562, C=0
+    0 : 294952 (A=147548, R=147404, C=0)
+    1 : 330475 (A=165317, R=165158, C=0)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 5 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 100
 Initial size        = 256
 Range               = 262144
 Write rate          = 100%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
+List implementation = IntSetLinkedListPerNodeLock
 
 Starting threads... 0 1 2 3 4
 End of warmup phase... 0 1 2 3 4
-[GC (Allocation Failure)  262144K->6760K(1005056K), 0.0171326 secs]
 End of test phase... 0 1 2 3 4
 Waiting for threads to finish...
 All threads returned successfully
@@ -484,24 +525,22 @@ RESULTS:
 
   Warmup duration (ms) = 2000
   Test duration (ms)   = 10000
-  Throughput (ops/s)   = 762
-  Nb iterations        = 7629566
-  Stats                = A=3814784, R=3814782, C=0
-    0 : 1523519 (A=761759, R=761760, C=0)
-    1 : 1512793 (A=756397, R=756396, C=0)
-    2 : 1526661 (A=763331, R=763330, C=0)
-    3 : 1533444 (A=766722, R=766722, C=0)
-    4 : 1533149 (A=766575, R=766574, C=0)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 100
+  Throughput (ops/s)   = 59
+  Nb iterations        = 596456
+  Stats                = A=298372, R=298084, C=0
+    0 : 116310 (A=58179, R=58131, C=0)
+    1 : 123030 (A=61545, R=61485, C=0)
+    2 : 116257 (A=58158, R=58099, C=0)
+    3 : 120358 (A=60211, R=60147, C=0)
+    4 : 120501 (A=60279, R=60222, C=0)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 10 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 100
 Initial size        = 256
 Range               = 262144
 Write rate          = 100%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
+List implementation = IntSetLinkedListPerNodeLock
 
 Starting threads... 0 1 2 3 4 5 6 7 8 9
 End of warmup phase... 0 1 2 3 4 5 6 7 8 9
-[GC (Allocation Failure)  262144K->11976K(1005056K), 0.0365856 secs]
-[GC (Allocation Failure)  274120K->11768K(1005056K), 0.0330023 secs]
 End of test phase... 0 1 2 3 4 5 6 7 8 9
 Waiting for threads to finish...
 All threads returned successfully
@@ -511,29 +550,27 @@ RESULTS:
 
   Warmup duration (ms) = 2000
   Test duration (ms)   = 10000
-  Throughput (ops/s)   = 1264
-  Nb iterations        = 12643267
-  Stats                = A=6321632, R=6321635, C=0
-    0 : 1269307 (A=634653, R=634654, C=0)
-    1 : 1272524 (A=636262, R=636262, C=0)
-    2 : 1259781 (A=629890, R=629891, C=0)
-    3 : 1264971 (A=632485, R=632486, C=0)
-    4 : 1271751 (A=635875, R=635876, C=0)
-    5 : 1260308 (A=630154, R=630154, C=0)
-    6 : 1261150 (A=630575, R=630575, C=0)
-    7 : 1272887 (A=636444, R=636443, C=0)
-    8 : 1267207 (A=633603, R=633604, C=0)
-    9 : 1243381 (A=621691, R=621690, C=0)
-Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark OptimisticPerNodeLock -r 262144 -i 256 -w 100
+  Throughput (ops/s)   = 52
+  Nb iterations        = 523597
+  Stats                = A=261931, R=261666, C=0
+    0 : 50821 (A=25425, R=25396, C=0)
+    1 : 54520 (A=27273, R=27247, C=0)
+    2 : 48726 (A=24372, R=24354, C=0)
+    3 : 53130 (A=26580, R=26550, C=0)
+    4 : 50843 (A=25432, R=25411, C=0)
+    5 : 51960 (A=25991, R=25969, C=0)
+    6 : 52640 (A=26335, R=26305, C=0)
+    7 : 56964 (A=28496, R=28468, C=0)
+    8 : 51124 (A=25575, R=25549, C=0)
+    9 : 52869 (A=26452, R=26417, C=0)
+Running: java -enableassertions -verbose:gc -Xms1024M -cp bin cp.benchmark.Driver -d 10000 -w 2000 -n 25 cp.benchmark.intset.Benchmark PerNodeLock -r 262144 -i 256 -w 100
 Initial size        = 256
 Range               = 262144
 Write rate          = 100%
-List implementation = IntSetLinkedListOptimisticPerNodeLock
+List implementation = IntSetLinkedListPerNodeLock
 
 Starting threads... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
 End of warmup phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-[GC (Allocation Failure)  262144K->27272K(1005056K), 0.0360705 secs]
-[GC (Allocation Failure)  289416K->27320K(1235456K), 0.0271865 secs]
 End of test phase... 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
 Waiting for threads to finish...
 All threads returned successfully
@@ -541,33 +578,33 @@ Validating...
 Validated successfully
 RESULTS:
 
-  Warmup duration (ms) = 2001
-  Test duration (ms)   = 10000
-  Throughput (ops/s)   = 1417
-  Nb iterations        = 14178256
-  Stats                = A=7089133, R=7089123, C=0
-    0 : 566143 (A=283072, R=283071, C=0)
-    1 : 569075 (A=284538, R=284537, C=0)
-    2 : 571926 (A=285963, R=285963, C=0)
-    3 : 557569 (A=278785, R=278784, C=0)
-    4 : 572154 (A=286077, R=286077, C=0)
-    5 : 567430 (A=283715, R=283715, C=0)
-    6 : 573959 (A=286980, R=286979, C=0)
-    7 : 565795 (A=282898, R=282897, C=0)
-    8 : 564696 (A=282348, R=282348, C=0)
-    9 : 561683 (A=280842, R=280841, C=0)
-    10 : 566180 (A=283090, R=283090, C=0)
-    11 : 570188 (A=285094, R=285094, C=0)
-    12 : 563883 (A=281942, R=281941, C=0)
-    13 : 564545 (A=282272, R=282273, C=0)
-    14 : 568109 (A=284055, R=284054, C=0)
-    15 : 570852 (A=285426, R=285426, C=0)
-    16 : 569044 (A=284522, R=284522, C=0)
-    17 : 567149 (A=283574, R=283575, C=0)
-    18 : 568460 (A=284230, R=284230, C=0)
-    19 : 559715 (A=279858, R=279857, C=0)
-    20 : 568783 (A=284392, R=284391, C=0)
-    21 : 570971 (A=285486, R=285485, C=0)
-    22 : 570424 (A=285212, R=285212, C=0)
-    23 : 567250 (A=283625, R=283625, C=0)
-    24 : 562273 (A=281137, R=281136, C=0)
+  Warmup duration (ms) = 2000
+  Test duration (ms)   = 10001
+  Throughput (ops/s)   = 49
+  Nb iterations        = 490788
+  Stats                = A=245534, R=245254, C=0
+    0 : 16564 (A=8287, R=8277, C=0)
+    1 : 18821 (A=9414, R=9407, C=0)
+    2 : 19059 (A=9532, R=9527, C=0)
+    3 : 24130 (A=12069, R=12061, C=0)
+    4 : 20873 (A=10440, R=10433, C=0)
+    5 : 21602 (A=10804, R=10798, C=0)
+    6 : 22520 (A=11270, R=11250, C=0)
+    7 : 20749 (A=10379, R=10370, C=0)
+    8 : 17994 (A=9002, R=8992, C=0)
+    9 : 20500 (A=10257, R=10243, C=0)
+    10 : 17566 (A=8787, R=8779, C=0)
+    11 : 18301 (A=9159, R=9142, C=0)
+    12 : 18629 (A=9321, R=9308, C=0)
+    13 : 19338 (A=9675, R=9663, C=0)
+    14 : 18802 (A=9408, R=9394, C=0)
+    15 : 19640 (A=9824, R=9816, C=0)
+    16 : 16494 (A=8252, R=8242, C=0)
+    17 : 18732 (A=9375, R=9357, C=0)
+    18 : 19535 (A=9773, R=9762, C=0)
+    19 : 21555 (A=10786, R=10769, C=0)
+    20 : 21373 (A=10693, R=10680, C=0)
+    21 : 17751 (A=8877, R=8874, C=0)
+    22 : 19657 (A=9834, R=9823, C=0)
+    23 : 18791 (A=9399, R=9392, C=0)
+    24 : 21812 (A=10917, R=10895, C=0)
